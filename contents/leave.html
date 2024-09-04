@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../assets/js/bootstrap.js"></script>
+    <script defer src="../assets/js/comp.js"></script>
+</head>
+<body>
+    <div id="leave" class="grid">
+        <div id="sidebar"></div>
+        <div id="leave_content">
+            <div id="bc1" class="breadcrumb"></div>
+            <div class="leave_content1">
+                <div id="hm1" class="hm"></div>
+                <div id="hm2" class="hm"></div>
+            </div>
+            <div class="grid gap8">
+                <div class="title">Leave Request</div>
+                <div id="tb1" class="section"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+    
+    window.breadCrumbInit("bc1", [{ name: "Leave Management" }, { name: "Leave Request" }])
+    window.heatmapInit("hm1", { name: "HeatMap", content: `
+        <div id="hs1"></div>
+        <div id="pg1"></div>
+    `})
+    window.heatmapInit("hm2", { hideSectionName: true, content: `
+        <div id="hs1"></div>
+        <div id="pg1"></div>
+    `})
+    window.horizonSelect("hs1", { selectData: 
+        [ 
+            { name: "MON", callback: () => {} },
+            { name: "TUE", callback: () => {} },
+            { name: "WED", callback: () => {} },
+            { name: "THU", callback: () => {} },
+            { name: "FRI", callback: () => {} },
+            { name: "SAT", callback: () => {} },
+            { name: "SUN", callback: () => {} },
+        ] 
+    })
+    window.progressbar("pg1", { 
+        progressData: [
+            { name: "Sick Leave", percent: "50%" },
+            { name: "Sick Leave", percent: "50%" },
+            { name: "Sick Leave", percent: "50%" },
+        ]
+    })
+
+    window.table("tb1", { tableData: [
+        {
+            name: "Mark Jacobs",
+            period: "01-01-2001",
+            days: "1 days",
+            leaveType: "Annual Leave",
+        },
+        {
+            name: "Mark Jacobs",
+            period: "01-01-2001",
+            days: "1 days",
+            leaveType: "Annual Leave",
+        },
+        {
+            name: "Mark Jacobs",
+            period: "01-01-2001",
+            days: "1 days",
+            leaveType: "Annual Leave",
+        },
+        {
+            name: "Mark Jacobs",
+            period: "01-01-2001",
+            days: "1 days",
+            leaveType: "Annual Leave",
+        },
+    ] })
+})
+</script>
+</html>

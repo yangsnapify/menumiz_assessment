@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../assets/js/bootstrap.js"></script>
+    <script defer src="../assets/js/comp.js"></script>
+</head>
+<body>
+    <div id="leave" class="grid">
+        <div id="sidebar"></div>
+        <div class="contentSection">
+            <div class="grid gap16">
+                <div id="approve_bc1" class="breadcrumb"></div>
+                <div class="title">Leave Request</div>
+                <div class="approve_nav_content">
+                    <span>Today April 4 2021</span>
+                </div>
+                <div id="approve1"></div>
+                <div id="approvename2"></div>
+                <div id="approve2"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        window.breadCrumbInit("approve_bc1", [{ name: "Leave Management" }, { name: "Leave Request" }]);
+        window.timeline("approve1");
+        window.timeline("approve2");
+        window.timelimeDropdown("approvename2", { name: "Creative team" }, "approve2")
+    })
+</script>
+</html>
